@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Paper, Accordion, AccordionSummary, AccordionDetails, Divider, Grid, Card, CardContent, Button, TextField, Alert } from '@mui/material';
+import { Container, Typography, Box, Accordion, AccordionSummary, AccordionDetails, Paper, Grid, TextField, Button, Card, CardContent, Alert } from '@mui/material';
 import { ExpandMore, Help, Search, ContactSupport, Article, LiveHelp, Email } from '@mui/icons-material';
 
 const HelpCenter = () => {
