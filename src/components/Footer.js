@@ -9,6 +9,7 @@ import {
   Divider,
   alpha
 } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   GitHub,
   Twitter,
@@ -68,7 +69,7 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               <IconButton
-                href="https://github.com/"
+                href="https://github.com/BadavathArjun"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
@@ -100,7 +101,7 @@ const Footer = () => {
                 <Twitter fontSize="small" />
               </IconButton>
               <IconButton
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/badavath-arjun-33ab93256/"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
@@ -125,7 +126,8 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
               <Link
-                href="/"
+                component={RouterLink}
+                to="/"
                 color="inherit"
                 underline="hover"
                 sx={{ opacity: 0.9, '&:hover': { opacity: 1 } }}
@@ -133,7 +135,8 @@ const Footer = () => {
                 Home
               </Link>
               <Link
-                href="/search"
+                component={RouterLink}
+                to="/"
                 color="inherit"
                 underline="hover"
                 sx={{ opacity: 0.9, '&:hover': { opacity: 1 } }}
@@ -141,7 +144,8 @@ const Footer = () => {
                 Search
               </Link>
               <Link
-                href="/lists"
+                component={RouterLink}
+                to="/lists"
                 color="inherit"
                 underline="hover"
                 sx={{ opacity: 0.9, '&:hover': { opacity: 1 } }}
@@ -149,7 +153,8 @@ const Footer = () => {
                 My Lists
               </Link>
               <Link
-                href="/dashboard"
+                component={RouterLink}
+                to="/dashboard"
                 color="inherit"
                 underline="hover"
                 sx={{ opacity: 0.9, '&:hover': { opacity: 1 } }}
@@ -166,7 +171,8 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
               <Link
-                href="/about"
+                component={RouterLink}
+                to="/about"
                 color="inherit"
                 underline="hover"
                 sx={{ opacity: 0.9, '&:hover': { opacity: 1 } }}
@@ -174,7 +180,8 @@ const Footer = () => {
                 About
               </Link>
               <Link
-                href="/privacy"
+                component={RouterLink}
+                to="/privacy-policy"
                 color="inherit"
                 underline="hover"
                 sx={{ opacity: 0.9, '&:hover': { opacity: 1 } }}
@@ -182,7 +189,8 @@ const Footer = () => {
                 Privacy Policy
               </Link>
               <Link
-                href="/terms"
+                component={RouterLink}
+                to="/terms-of-service"
                 color="inherit"
                 underline="hover"
                 sx={{ opacity: 0.9, '&:hover': { opacity: 1 } }}
@@ -190,7 +198,8 @@ const Footer = () => {
                 Terms of Service
               </Link>
               <Link
-                href="/help"
+                component={RouterLink}
+                to="/help"
                 color="inherit"
                 underline="hover"
                 sx={{ opacity: 0.9, '&:hover': { opacity: 1 } }}
@@ -240,11 +249,11 @@ const Footer = () => {
           
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <Typography variant="body2" sx={{ opacity: 0.8 }}>
-              Made with
+              Made by
             </Typography>
             <Favorite sx={{ color: '#FF6B6B', fontSize: 16 }} />
             <Typography variant="body2" sx={{ opacity: 0.8 }}>
-              for movie lovers
+              Badavath Arjun
             </Typography>
           </Box>
 

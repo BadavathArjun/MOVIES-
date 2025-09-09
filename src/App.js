@@ -8,6 +8,10 @@ import Lists from './pages/Lists';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import UserDashboard from './pages/UserDashboard';
+import About from './pages/About';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import HelpCenter from './pages/HelpCenter';
 
 function App() {
   return (
@@ -22,6 +26,10 @@ function App() {
               <Route path="/auth" element={<Auth />} />
               <Route path="/lists" element={<Lists />} />
               <Route path="/dashboard" element={<UserDashboard />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/help" element={<HelpCenter />} />
             </Routes>
           </div>
           <Footer />

@@ -92,17 +92,23 @@ const MovieList = ({ movies, currentPage = 1, totalPages = 1, onPageChange, load
       </Box>
 
       {/* Movies Grid */}
-      <Grid container spacing={3}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 3,
+          justifyContent: 'center',
+          alignItems: 'flex-start'
+        }}
+      >
         {movies.map((movie, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={movie.imdbID}>
-            <Fade in timeout={500} style={{ transitionDelay: `${index * 100}ms` }}>
-              <Box>
-                <MovieCard movie={movie} />
-              </Box>
-            </Fade>
-          </Grid>
+          <Fade in timeout={500} style={{ transitionDelay: `${index * 100}ms` }} key={movie.imdbID}>
+            <Box>
+              <MovieCard movie={movie} />
+            </Box>
+          </Fade>
         ))}
-      </Grid>
+      </Box>
 
       {/* Bottom Pagination */}
       {totalPages > 1 && (

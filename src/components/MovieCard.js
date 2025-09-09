@@ -37,14 +37,15 @@ const MovieCard = ({ movie, onToggleFavorite, isFavorite = false }) => {
     }
   };
 
-  const posterUrl = imageError || movie.Poster === 'N/A' 
-    ? '/placeholder-movie.png'
+  const posterUrl = imageError || !movie.Poster || movie.Poster === 'N/A'
+    ? null
     : movie.Poster;
 
   return (
     <Card
       sx={{
         height: 500,
+        width: 280,
         display: 'flex',
         flexDirection: 'column',
         transition: 'all 0.3s ease-in-out',
@@ -62,18 +63,53 @@ const MovieCard = ({ movie, onToggleFavorite, isFavorite = false }) => {
     >
       {/* Poster Image with Overlay */}
       <Box sx={{ position: 'relative', overflow: 'hidden' }}>
-        <CardMedia
-          component="img"
-          height="320"
-          image={posterUrl}
-          alt={movie.Title}
-          onError={handleImageError}
-          sx={{
-            objectFit: 'cover',
-            transition: 'transform 0.3s ease-in-out',
-            transform: isHovered ? 'scale(1.1)' : 'scale(1)'
-          }}
-        />
+        {posterUrl ? (
+          <CardMedia
+            component="img"
+            height="320"
+            image={posterUrl}
+            alt={movie.Title}
+            onError={handleImageError}
+            sx={{
+              objectFit: 'cover',
+              transition: 'transform 0.3s ease-in-out',
+              transform: isHovered ? 'scale(1.1)' : 'scale(1)'
+            }}
+          />
+        ) : (
+          <Box
+            sx={{
+              height: 320,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)',
+              color: '#666',
+              fontSize: '14px',
+              textAlign: 'center',
+              p: 2
+            }}
+          >
+            <Box
+              sx={{
+                width: 60,
+                height: 60,
+                borderRadius: '50%',
+                background: '#ccc',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                mb: 2,
+                fontSize: '24px'
+              }}
+            >
+              🎬
+            </Box>
+            <Box sx={{ fontWeight: 'bold', mb: 1 }}>No Image</Box>
+            <Box sx={{ fontSize: '12px', opacity: 0.7 }}>Available</Box>
+          </Box>
+        )}
         
         {/* Gradient Overlay */}
         <Box
